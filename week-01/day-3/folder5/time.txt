@@ -1,1 +1,1 @@
-fsfdffsfs
+       1       6      38 ../folder1/text1.txt
