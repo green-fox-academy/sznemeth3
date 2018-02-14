@@ -1,0 +1,17 @@
+body {
+    width: 700px;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2 {
+    text-align: center;
+
+}
+p {
+    font-style: italic;
+}
+img {
+    text-align:  none;
+    width: 100%;
+
+}
