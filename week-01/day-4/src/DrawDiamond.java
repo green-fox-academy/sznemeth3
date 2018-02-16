@@ -21,39 +21,37 @@ public class DrawDiamond {
         System.out.println("Please type a number");
         String a = "*";
         int userInput1 =scanner.nextInt();
-        if (userInput1 >3) {
-            System.out.println("Amount of lines should be higher than 2");
-        }
-        else if ( userInput1%2 != 0) {
+        if ( userInput1%2 == 0) {
             System.out.println("Amount of lines should be odd number");
         }
-        for (int i = 1; i < userInput1 + 1; i++ ) {
-            // Top of the diamond
-            if (i == 1) {
-                System.out.println(String.join("", Collections.nCopies( (userInput1 + 1)/2 - 1, " ")) + a);
-            }
-            //Above the helf of the diamond but not the top
-            else if (i != 1 && i != userInput1 && i < ((userInput1+1) /2)) {
+        else {
+            for (int i = 1; i < userInput1 + 1; i++ ) {
+                // Top of the diamond
+                if (i == 1) {
+                    System.out.println(String.join("", Collections.nCopies( (userInput1 + 1)/2 - 1, " ")) + a);
+                }
+                //Above the middle of the diamond but not the top
+                else if (i != 1 && i != userInput1 && i < ((userInput1+1) /2)) {
 
-                System.out.println(String.join("", Collections.nCopies( (userInput1 + 1)/2 - i, " ")) +
-                        String.join("", Collections.nCopies(i + (i-1), a)));
-            }
-            //Half of the diamond
-            else if (i == ((userInput1 + 1)/ 2)) {
-                System.out.println(String.join("", Collections.nCopies( userInput1, a)));
-            }
-            // Below the half of the diamond
-            else if (i > ((userInput1 +1) /2) && i != userInput1) {
-                System.out.println(String.join("", Collections.nCopies( i -((userInput1 +1)/2), " ")) +
-                        String.join("", Collections.nCopies((userInput1 - i) + 1 + ((userInput1 - i +1)-1), a)));
+                    System.out.println(String.join("", Collections.nCopies( (userInput1 + 1)/2 - i, " ")) +
+                            String.join("", Collections.nCopies(i + (i-1), a)));
+                }
+                //Half of the diamond
+                else if (i == ((userInput1 + 1)/ 2)) {
+                    System.out.println(String.join("", Collections.nCopies( userInput1, a)));
+                }
+                // Below the middle of the diamond
+                else if (i > ((userInput1 +1) /2) && i != userInput1) {
+                    System.out.println(String.join("", Collections.nCopies( i -((userInput1 +1)/2), " ")) +
+                            String.join("", Collections.nCopies((userInput1 - i) + 1 + ((userInput1 - i +1)-1), a)));
 
-            }
-            //bottom of the diamond
-            else {
-                System.out.println(String.join("", Collections.nCopies( (userInput1 + 1)/2 - 1, " ")) +
-                        a);
+                }
+                //bottom of the diamond
+                else {
+                    System.out.println(String.join("", Collections.nCopies( (userInput1 + 1)/2 - 1, " ")) +
+                            a);
+                }
             }
         }
-
     }
 }
