@@ -16,18 +16,20 @@ public class DrawSquare {
         // The square should have as many lines as the number was
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please type a number");
-        String a = "*";
+        String a = "%";
         int userInput1 =scanner.nextInt();
         for (int i = 1; i < userInput1 + 1; i++ ) {
             if (i == 1) {
-                System.out.println(String.join("", Collections.nCopies( userInput1 - i, " ")) +"*");
+                System.out.println(String.join("", Collections.nCopies( 5, a)));
+            }
+            else if (i != userInput1) {
+                System.out.println( "%" +
+                        String.join("", Collections.nCopies(3, " ")) +
+                        "%");
             }
             else {
-                System.out.println(String.join("", Collections.nCopies( userInput1 - i, " ")) +
-                        String.join("", Collections.nCopies(i + (i-1), "*")) +
-                        String.join("", Collections.nCopies(userInput1 - i, " ")));
+                System.out.println(String.join("", Collections.nCopies( 5, a)));
             }
-
         }
 
     }
