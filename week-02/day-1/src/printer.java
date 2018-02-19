@@ -15,7 +15,6 @@ public class Printer {
         String inputPrinter1 = "first";
         String inputPrinter2 = "second";
         String inputPrinter3 = "third";
-        String inputPrinter4 = "fourth";
         printer(inputPrinter1, inputPrinter2, inputPrinter3, "fifth");
 
     }
