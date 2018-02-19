@@ -1,5 +1,4 @@
-import java.util.Arrays;
-public class printer {
+public class Printer {
     public static void main(String[] args) {
         //  Create the usual class wrapper
         //  and main method on your own.
@@ -13,10 +12,18 @@ public class printer {
         // printer("first", "second")
         // printer("first", "second", "third", "fourh")
         // ...
-        String printerList[] = Arrays
+        String inputPrinter1 = "first";
+        String inputPrinter2 = "second";
+        String inputPrinter3 = "third";
+        String inputPrinter4 = "fourth";
+        printer(inputPrinter1, inputPrinter2, inputPrinter3, "fifth");
 
     }
-    public static String printer() {
+    public static void printer(String... args) {
+        for (String arg : args) {
+            System.out.print(arg + " ");
+        }
+
 
 
     }
