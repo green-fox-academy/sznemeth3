@@ -20,6 +20,5 @@ public class Candyshop {
         inputArray.set(inputArray.indexOf(2),"Croissant");
         inputArray.set(inputArray.indexOf(false),"Ice Cream");
         return inputArray;
-
     }
 }
