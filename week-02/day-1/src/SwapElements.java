@@ -8,6 +8,6 @@ public class SwapElements {
         String swapper = abc[2];
         abc[2]=abc[0];
         abc[0]=swapper;
-        System.out.println(abc[0] + " "  + abc[2]);
+        System.out.println(abc[0] + " "  + abc);
     }
 }
