@@ -1,3 +1,5 @@
+import org.w3c.dom.css.RGBColor;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -8,10 +10,14 @@ public class PurpleSteps {
     public static void mainDraw(Graphics graphics) {
         // Reproduce this:
         // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
-
+        graphics.setColor(new Color(153,76,222));
+        for (int i = 1; i < 21; i++) {
+            graphics.fillRect(i+(i*10),i+(i*10),10,10);
+        }
 
 
     }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
