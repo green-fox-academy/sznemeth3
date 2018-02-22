@@ -8,7 +8,7 @@ public class RainbowDots {
 
     static int WIDTH = 600;
     static int HEIGHT = 600;
-    static int DOT_SIZE = 20;
+    static int DOT_SIZE = 10;
 
     static int iterator = 0;
 
@@ -17,28 +17,29 @@ public class RainbowDots {
             for (int i = 0; i < 50; i++) {
 
                 int radius =  iterator-(i*100);
-                if (radius < WIDTH / 2) {
+                if (radius < WIDTH / 2 ) {
                     drawDotsOnACircle(graphics, radius);
                 }
-                if (radius > WIDTH / 2) {
-                    iterator = 0;
+                if (radius > WIDTH)  {
+                    iterator = 50;
                     continue;
                 }
+
             }
         }
 
     private static void drawDotsOnACircle(Graphics graphics, int radius) {
-        for (int angle = 0; angle < 360; angle+= 10) {
+        for (int angle = 0; angle < 360; angle+= 2) {
             double radian = Math.toRadians(angle);
             int positionX = (int)(WIDTH / 2 + (radius * Math.sin(radian)));
             int positionY = (int)(HEIGHT / 2 + (radius * Math.cos(radian)));
 
-            graphics.setColor(getRandomColor());
+            graphics.setColor(getRandomColor(angle));
             graphics.fillOval(positionX, positionY, DOT_SIZE, DOT_SIZE);
         }
     }
 
-    private static Color getRandomColor() {
+    private static Color getRandomColor(int angle) {
         Random random = new Random();
         int r = random.nextInt(256);
         int g = random.nextInt(256);
