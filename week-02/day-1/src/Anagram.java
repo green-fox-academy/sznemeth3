@@ -18,18 +18,6 @@ public class Anagram {
 
 
     }
-    public static char[] toCharacterArray( String inputWord ) {
-        if ( inputWord == null ) {
-            return null;
-        }
-        int len = inputWord.length();
-        char[] array = new char[len];
-        for (int i = 0; i < len ; i++) {
-            array[i] = new  Character(inputWord.charAt(i));
-        }
-
-        return array;
-    }
 
     private static boolean checkIfAnagram(char[] userInput1, char[] userInput2) {
         if (userInput1.length != userInput2.length) {
@@ -39,22 +27,14 @@ public class Anagram {
         for (int i = 0; i < userInput1.length; i++) {
             for (int j = 0; j < userInput2.length; j++) {
                 if (userInput1[i] ==userInput2[j]) {
+                    userInput2[j] = 0;
                     identicalCounter++;
                     break;
                 }
             }
 
         }
-        for (int i = 0; i < userInput1.length; i++) {
-            for (int j = 0; j < userInput2.length; j++) {
-                if (userInput2[i] ==userInput1[j]) {
-                    identicalCounter++;
-                    break;
-                }
-            }
-
-        }
-        if (identicalCounter==(userInput1.length)*2) {
+        if (identicalCounter==(userInput1.length)) {
             return true;
         }
         else {
