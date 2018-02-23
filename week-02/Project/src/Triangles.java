@@ -12,7 +12,7 @@ public class Triangles {
     public static void mainDraw(Graphics graphics){
         int[] x= new int[]{0,TRIANGLE_SIDE/2,TRIANGLE_SIDE};
         int[] y=new int[]{TRIANGLE_BOTTOMY,(int)(TRIANGLE_BOTTOMY-TRIANGLE_HEIGHT),TRIANGLE_BOTTOMY};
-
+        //Draw base triangle
         graphics.drawPolygon(x,y,3);
         for (int i = 1; i < 21; i+=1) {
             graphics.drawLine(0+(i*TRIANGLE_SIDE/21),TRIANGLE_BOTTOMY,TRIANGLE_SIDE/2+i*TRIANGLE_SIDE/42,
