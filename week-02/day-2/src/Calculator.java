@@ -24,7 +24,7 @@ public class Calculator {
         System.out.println("Please type in the expression:");
         Scanner scanner = new Scanner(System.in);
         String userInput1 = scanner.nextLine();
-        List<String> myList = new ArrayList<String>(Arrays.asList(userInput1.split(" ")));
+        List<String> myList = new ArrayList<>(Arrays.asList(userInput1.split(" ")));
         System.out.println(myList);
         System.out.println(calculus(myList));
 
@@ -35,6 +35,18 @@ public class Calculator {
         System.out.println(myList.get(0));
         if (myList.get(0).equals("+")) {
             output = Integer.parseInt(myList.get(1)) + Integer.parseInt(myList.get(2));
+            return output;
+        } else if (myList.get(0).equals("-")) {
+            output = Integer.parseInt(myList.get(1)) - Integer.parseInt(myList.get(2));
+            return output;
+        } else if (myList.get(0).equals("*")) {
+            output = Integer.parseInt(myList.get(1)) * Integer.parseInt(myList.get(2));
+            return output;
+        } else if (myList.get(0).equals("/")) {
+            output = Integer.parseInt(myList.get(1)) / Integer.parseInt(myList.get(2));
+            return output;
+        } else if (myList.get(0).equals("%")) {
+            output = Integer.parseInt(myList.get(1)) % Integer.parseInt(myList.get(2));
             return output;
         }
         return output;

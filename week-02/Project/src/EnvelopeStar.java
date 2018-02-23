@@ -5,7 +5,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 
 public class EnvelopeStar {
-    static int STAR_WIDTH = 320;
+    static int STAR_WIDTH = 400;
 
     public static void mainDraw(Graphics graphics){
         //graphics.drawLine(0,STAR_WIDTH/2,STAR_WIDTH,STAR_WIDTH/2);

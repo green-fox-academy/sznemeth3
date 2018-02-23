@@ -62,10 +62,6 @@ public class RainbowDots {
             imagePanel.repaint();
             Thread.sleep(100);
             iterator += 10;
-            /*if(iterator==50) {
-                iterator = 0;
-                continue;
-            }*/
         }
     }
 
