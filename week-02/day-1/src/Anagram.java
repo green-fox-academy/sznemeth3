@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Anagram {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -8,15 +9,11 @@ public class Anagram {
         System.out.println("Please provide the second word");
         String userInput2 = scanner.nextLine();
         char[] charArray2 = userInput2.toCharArray();
-        if (checkIfAnagram(charArray1,charArray2) == false) {
+        if (checkIfAnagram(charArray1, charArray2) == false) {
             System.out.println("Not an Anagram");
-        }
-        else {
+        } else {
             System.out.println("Anagram!!!");
         }
-
-
-
     }
 
     private static boolean checkIfAnagram(char[] userInput1, char[] userInput2) {
@@ -26,18 +23,16 @@ public class Anagram {
         int identicalCounter = 0;
         for (int i = 0; i < userInput1.length; i++) {
             for (int j = 0; j < userInput2.length; j++) {
-                if (userInput1[i] ==userInput2[j]) {
+                if (userInput1[i] == userInput2[j]) {
                     userInput2[j] = 0;
                     identicalCounter++;
                     break;
                 }
             }
-
         }
-        if (identicalCounter==(userInput1.length)) {
+        if (identicalCounter == (userInput1.length)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

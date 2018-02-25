@@ -10,26 +10,23 @@ public class Checkerboard {
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (i%2==0) {
-                    if (j%2==0) {
+                if (i % 2 == 0) {
+                    if (j % 2 == 0) {
                         graphics.setColor(Color.BLACK);
                         graphics.fillRect((WIDTH / 8) * i, (WIDTH / 8) * j, WIDTH / 8, WIDTH / 8);
-                    }
-                    else {
+                    } else {
                         graphics.setColor(Color.WHITE);
+                        graphics.fillRect((WIDTH / 8) * i, (WIDTH / 8) * j, WIDTH / 8, WIDTH / 8);
+                    }
+                } else {
+                    if (j % 2 == 0) {
+                        graphics.setColor(Color.WHITE);
+                        graphics.fillRect((WIDTH / 8) * i, (WIDTH / 8) * j, WIDTH / 8, WIDTH / 8);
+                    } else {
+                        graphics.setColor(Color.BLACK);
                         graphics.fillRect((WIDTH / 8) * i, (WIDTH / 8) * j, WIDTH / 8, WIDTH / 8);
                     }
                 }
-                else {
-                    if (j%2==0) {
-                        graphics.setColor(Color.WHITE);
-                        graphics.fillRect((WIDTH / 8) * i, (WIDTH / 8) * j, WIDTH / 8, WIDTH / 8);
-                    }
-                    else {
-                        graphics.setColor(Color.BLACK);
-                        graphics.fillRect((WIDTH / 8) * i, (WIDTH / 8) * j, WIDTH / 8, WIDTH / 8);
-                    }
-                    }
 
             }
 

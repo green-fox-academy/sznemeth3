@@ -16,7 +16,7 @@ public class RainbowDots {
     public static void mainDraw(Graphics graphics) {
             for (int i = 0; i < 50; i++) {
 
-                int radius =  iterator-(i*100);
+                int radius =  iterator-(i*10);
                 if (radius < WIDTH / 2 ) {
                     drawDotsOnACircle(graphics, radius);
                 }
@@ -29,7 +29,7 @@ public class RainbowDots {
         }
 
     private static void drawDotsOnACircle(Graphics graphics, int radius) {
-        for (int angle = 0; angle < 360; angle+= 2) {
+        for (int angle = 0; angle < 360; angle+= 8) {
             double radian = Math.toRadians(angle);
             int positionX = (int)(WIDTH / 2 + (radius * Math.sin(radian)));
             int positionY = (int)(HEIGHT / 2 + (radius * Math.cos(radian)));
