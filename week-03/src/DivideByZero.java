@@ -12,6 +12,5 @@ public class DivideByZero {
     catch (ArithmeticException e) {
       System.out.println("fail");
     }
-
   }
 }
