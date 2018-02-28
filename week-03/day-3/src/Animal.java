@@ -1,17 +1,25 @@
 public class Animal {
   private String name;
-  private int hunger = 50;
-  private int thirst = 50;
+  int hunger = 50;
+  int thirst = 50;
 
-  private void eat () {
+  public void eat () {
     hunger--;
   }
-  private void drink () {
+  public void drink () {
     thirst--;
   }
-  private void play () {
+  public void play () {
     hunger++;
     thirst++;
+  }
+
+  public Animal() {
+    name = "random animal";
+  }
+
+  public Animal(String name) {
+    this.name = name;
   }
 
   @Override
