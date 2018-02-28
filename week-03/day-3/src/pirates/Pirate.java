@@ -43,6 +43,7 @@ public class Pirate {
 
   public void die() {
     isAlive = false;
+    drunkness = 0;
   }
   public void brawl(Pirate pirate1, Pirate pirate2) {
     if (pirate1.isAlive == true && pirate2.isAlive == true) {
