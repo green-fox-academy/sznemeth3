@@ -24,14 +24,14 @@ public class PostIt {
 
   public static void main(String[] args) {
     PostIt first = new PostIt();
-    first.backgroundColor= "orange";
-    first.text= "Idea 1";
+    first.backgroundColor = "orange";
+    first.text = "Idea 1";
     first.textColor = "blue";
     PostIt second = new PostIt("pink");
-    second .text= "Awesome";
+    second.text = "Awesome";
     second.textColor = "black";
     PostIt third = new PostIt("yellow");
-    third.text="SuperB";
+    third.text = "SuperB";
     third.textColor = "green";
     System.out.println(first.toString());
   }
