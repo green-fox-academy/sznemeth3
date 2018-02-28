@@ -4,6 +4,7 @@ import java.util.List;
 public class Farm {
   List<Animal> animalList = new ArrayList<>();
   int slots;
+
   public void add(Animal animal) {
     animalList.add(animal);
   }
@@ -18,11 +19,12 @@ public class Farm {
       animalList.add(ani);
     }
   }
+
   public void slaughter() {
     Animal currentHungriest = animalList.get(0);
     for (int i = 0; i < animalList.size(); i++) {
       if (animalList.get(i).hunger < currentHungriest.hunger)
-      currentHungriest = animalList.get(i);
+        currentHungriest = animalList.get(i);
     }
     animalList.remove(currentHungriest);
   }
@@ -36,10 +38,10 @@ public class Farm {
   }
 
   public static void main(String[] args) {
-    Animal animal1 = new Animal ("zebra");
-    Animal animal2 = new Animal ("dog");
-    Animal animal3 = new Animal ("cat");
-    Animal animal4 = new Animal ("cow");
+    Animal animal1 = new Animal("zebra");
+    Animal animal2 = new Animal("dog");
+    Animal animal3 = new Animal("cat");
+    Animal animal4 = new Animal("cow");
     Farm farm = new Farm(8);
     farm.add(animal1);
     farm.add(animal2);
@@ -53,10 +55,5 @@ public class Farm {
     System.out.println(farm.toString());
     farm.slaughter();
     System.out.println(farm.toString());
-
-
-
-
-
   }
 }
