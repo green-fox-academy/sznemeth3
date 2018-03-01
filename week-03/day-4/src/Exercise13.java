@@ -6,9 +6,10 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Exercise13{
     static int STARTPOSIOTION_X = 0;
     static int STARTPOSIOTION_Y = 350;
-    static int HEXAGON_SIDE = 200;
+    static int HEXAGON_SIDE = 400;
     static int HEXAGON_INNER_HEIGHT = (int) Math.sqrt(Math.pow(HEXAGON_SIDE, 2) - Math.pow(HEXAGON_SIDE / 2, 2));
-  private static void mainDraw(Graphics graphics) {
+    static int ITERATOR = 0;
+  private static void mainDraw(Graphics graphics){
     //recurse(graphics, 0,0,WIDTH / 3,HEIGHT / 3);
     int[] yValues = new int[]{((STARTPOSIOTION_Y)),
             (STARTPOSIOTION_Y - HEXAGON_INNER_HEIGHT),
@@ -23,13 +24,16 @@ public class Exercise13{
             (STARTPOSIOTION_X + HEXAGON_SIDE / 2 + HEXAGON_SIDE) ,
             (STARTPOSIOTION_X + HEXAGON_SIDE / 2) };
     graphics.drawPolygon(xValues,yValues,6);
-    recurse(graphics,STARTPOSIOTION_Y,STARTPOSIOTION_X, HEXAGON_SIDE/2, HEXAGON_INNER_HEIGHT);
+
+    recurse(graphics,STARTPOSIOTION_Y,STARTPOSIOTION_X, HEXAGON_SIDE/2, HEXAGON_INNER_HEIGHT,1);
+
+
 
   }
-  public static void recurse (Graphics graphics, int startY, int startX, int hexagonSide, int height){
-    if (hexagonSide < 10){
+  public static void recurse (Graphics graphics, int startY, int startX, int hexagonSide, int height,int iterator){
+    if (hexagonSide < 1){
 
-    } else {
+    } else if (iterator < ITERATOR){
       int hexagonHeight = (int) Math.sqrt(Math.pow(hexagonSide, 2) - Math.pow(hexagonSide / 2, 2));
       int[] yValues1 = new int[]{((startY) - height / 2),
               (startY - height / 2 - hexagonHeight),
@@ -44,7 +48,7 @@ public class Exercise13{
               (startX + (hexagonSide / 2) + hexagonSide / 2 + hexagonSide),
               (startX + (hexagonSide / 2) + hexagonSide / 2)};
       graphics.drawPolygon(xValues1, yValues1, 6);
-      recurse(graphics, ((startY) - height / 2), startX + (hexagonSide / 2), hexagonSide / 2, hexagonHeight);
+      recurse(graphics, ((startY) - height / 2), startX + (hexagonSide / 2), hexagonSide / 2, hexagonHeight, iterator +10);
       int[] yValues2 = new int[]{((startY)),
               (startY - hexagonHeight),
               (startY - hexagonHeight),
@@ -58,7 +62,7 @@ public class Exercise13{
               (startX + hexagonSide * 2 + hexagonSide / 2 + hexagonSide),
               (startX + hexagonSide * 2 + hexagonSide / 2)};
       graphics.drawPolygon(xValues2, yValues2, 6);
-      recurse(graphics, startY, startX + hexagonSide * 2, hexagonSide / 2, hexagonHeight);
+      recurse(graphics, startY, startX + hexagonSide * 2, hexagonSide / 2, hexagonHeight, iterator + 10);
       int[] yValues3 = new int[]{((startY) + height / 2),
               (startY - hexagonHeight + height / 2),
               (startY - hexagonHeight + height / 2),
@@ -72,7 +76,7 @@ public class Exercise13{
               (startX + ((hexagonSide / 2) + hexagonSide / 2 + hexagonSide)),
               (startX + ((hexagonSide / 2) + hexagonSide / 2))};
       graphics.drawPolygon(xValues3, yValues3, 6);
-      recurse(graphics, (startY) + height / 2, startX + (hexagonSide / 2), hexagonSide / 2, hexagonHeight);
+      recurse(graphics, (startY) + height / 2, startX + (hexagonSide / 2), hexagonSide / 2, hexagonHeight, iterator + 10);
 
     }
   }
@@ -80,13 +84,20 @@ public class Exercise13{
   static int WIDTH = 800;
   static int HEIGHT = 800;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException{
     JFrame jFrame = new JFrame("Drawing");
     jFrame.setSize(new Dimension(WIDTH, HEIGHT));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    jFrame.add(new ImagePanel());
+    ImagePanel imagePanel = new ImagePanel();
+    jFrame.add(imagePanel);
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
+
+    while (true) {
+      imagePanel.repaint();
+      Thread.sleep(100);
+      ITERATOR += 1;
+    }
 
 
   }
