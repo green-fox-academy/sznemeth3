@@ -71,7 +71,7 @@ public class Ship {
     Random r = new Random();
     for (Pirate pirate : this.crew) {
       if (r.nextInt(2) == 1) {
-        pirate.isAlive = false;
+        pirate.die();
       }
     }
     int receivedRum = r.nextInt(30) * 2;
@@ -84,7 +84,7 @@ public class Ship {
     Random r = new Random();
     for (Pirate pirate : otherShip.crew) {
       if (r.nextInt(2) == 1) {
-        pirate.isAlive = false;
+        pirate.die();
       }
     }
     int receivedRum = r.nextInt(30) * 2;

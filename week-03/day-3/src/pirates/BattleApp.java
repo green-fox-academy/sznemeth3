@@ -12,5 +12,4 @@ public class BattleApp {
     ship1.shipStats();
     ship2.shipStats();
   }
-
 }
