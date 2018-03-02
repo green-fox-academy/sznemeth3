@@ -4,7 +4,7 @@ import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Exercise13 {
+public class Hexagon {
   static int STARTPOSIOTION_X = 0;
   static int STARTPOSIOTION_Y = 350;
   static int HEXAGON_SIDE = 400;
@@ -28,7 +28,7 @@ public class Exercise13 {
     graphics.setColor(getRandomColor());
     graphics.fillPolygon(xValues, yValues, 6);
 
-    recurse(graphics, STARTPOSIOTION_Y, STARTPOSIOTION_X, HEXAGON_SIDE / 2, HEXAGON_INNER_HEIGHT, 1);
+    recurse(graphics, STARTPOSIOTION_Y, STARTPOSIOTION_X, HEXAGON_SIDE , HEXAGON_INNER_HEIGHT, 1);
 
 
   }
@@ -39,7 +39,7 @@ public class Exercise13 {
     } else if (iterator < ITERATOR) {
       int hexagonHeight = (int) Math.sqrt(Math.pow(hexagonSide, 2) - Math.pow(hexagonSide / 2, 2));
       Random r = new Random();
-      int[] yValues1 = new int[]{((startY) - height / 2),
+      /*int[] yValues1 = new int[]{((startY) - height / 2),
               (startY - height / 2 - hexagonHeight),
               (startY - height / 2 - hexagonHeight),
               startY - height / 2,
@@ -50,42 +50,43 @@ public class Exercise13 {
               (startX + (hexagonSide / 2) + hexagonSide / 2 + hexagonSide),
               (startX + (hexagonSide / 2) + 2 * hexagonSide),
               (startX + (hexagonSide / 2) + hexagonSide / 2 + hexagonSide),
-              (startX + (hexagonSide / 2) + hexagonSide / 2)};
+              (startX + (hexagonSide / 2) + hexagonSide / 2)};*/
       graphics.setColor(getRandomColor());
-      graphics.fillPolygon(xValues1, yValues1, 6);
-      recurse(graphics, ((startY) - height / 2), startX + (hexagonSide / 2), hexagonSide / 2, hexagonHeight, iterator + 10);
-      int[] yValues2 = new int[]{((startY)),
-              (startY - hexagonHeight),
-              (startY - hexagonHeight),
-              startY,
-              (startY + hexagonHeight),
-              (startY + hexagonHeight)};
-      int[] xValues2 = new int[]{startX + hexagonSide * 2,
-              (startX + hexagonSide * 2 + hexagonSide / 2),
-              (startX + hexagonSide * 2 + hexagonSide / 2 + hexagonSide),
-              (startX + hexagonSide * 2 + 2 * hexagonSide),
-              (startX + hexagonSide * 2 + hexagonSide / 2 + hexagonSide),
-              (startX + hexagonSide * 2 + hexagonSide / 2)};
-      graphics.setColor(getRandomColor());
-      graphics.fillPolygon(xValues2, yValues2, 6);
-      recurse(graphics, startY, startX + hexagonSide * 2, hexagonSide / 2, hexagonHeight, iterator + 10);
-      int[] yValues3 = new int[]{((startY) + height / 2),
-              (startY - hexagonHeight + height / 2),
-              (startY - hexagonHeight + height / 2),
-              startY + height / 2,
-              (startY + hexagonHeight + height / 2),
-              (startY + hexagonHeight) + height / 2};
-      int[] xValues3 = new int[]{startX + ((hexagonSide / 2)),
-              (startX + ((hexagonSide / 2) + hexagonSide / 2)),
-              (startX + ((hexagonSide / 2) + hexagonSide / 2 + hexagonSide)),
-              (startX + ((hexagonSide / 2) + 2 * hexagonSide)),
-              (startX + ((hexagonSide / 2) + hexagonSide / 2 + hexagonSide)),
-              (startX + ((hexagonSide / 2) + hexagonSide / 2))};
-      graphics.setColor(getRandomColor());
-      graphics.fillPolygon(xValues3, yValues3, 6);
-      recurse(graphics, (startY) + height / 2, startX + (hexagonSide / 2), hexagonSide / 2, hexagonHeight, iterator + 10);
+      /*graphics.fillPolygon(xValues1, yValues1, 6);*/
+      magicMethod(graphics, startY-height/3*2, startX + hexagonSide , hexagonSide /3);
+      magicMethod(graphics, startY-height/3*2, startX + hexagonSide/3 , hexagonSide /3);
+      magicMethod(graphics, startY +height/3*2, startX + hexagonSide/3, hexagonSide /3);
+      magicMethod(graphics, startY, startX + 2 * hexagonSide - hexagonSide*2/3, hexagonSide /3);
+      magicMethod(graphics, startY, startX, hexagonSide /3);
+      magicMethod(graphics, startY +height/3*2, startX + hexagonSide, hexagonSide /3);
 
+      int hexagonHeight2 = (int) Math.sqrt(Math.pow(hexagonSide /3, 2) - Math.pow(hexagonSide /3 / 2, 2));
+      recurse(graphics, startY-hexagonHeight2/3*2, startX + hexagonSide/3 , hexagonSide /3,hexagonHeight, iterator + 10);
+      recurse(graphics, startY +hexagonHeight2/3*2, startX + hexagonSide/3 , hexagonSide /3,hexagonHeight, iterator + 10);
+      recurse(graphics, startY, startX + 2 * hexagonSide - hexagonSide*2/3, hexagonSide /3,hexagonHeight, iterator + 10);
+      recurse(graphics, startY, startX, hexagonSide /3,hexagonHeight, iterator + 10);
+      recurse(graphics, startY +hexagonHeight2/3*2, startX + hexagonSide, hexagonSide /3,hexagonHeight, iterator + 10);
+      recurse(graphics, startY-hexagonHeight/3*2, startX + hexagonSide , hexagonSide /3,hexagonHeight,  + 1);
     }
+  }
+  private static void magicMethod (Graphics graphics, int startY, int startX, int hexagonSide) {
+    int hexagonHeight = (int) Math.sqrt(Math.pow(hexagonSide, 2) - Math.pow(hexagonSide / 2, 2));
+    int[] yValues1 = new int[]{((startY)),
+            (startY  - hexagonHeight),
+            (startY - hexagonHeight),
+            startY ,
+            (startY  + hexagonHeight),
+            (startY  + hexagonHeight)};
+    int[] xValues1 = new int[]{startX ,
+            (startX  + hexagonSide / 2),
+            (startX + + hexagonSide / 2 + hexagonSide),
+            (startX  + 2 * hexagonSide),
+            (startX  + hexagonSide / 2 + hexagonSide),
+            (startX  + hexagonSide / 2)};
+    graphics.setColor(getRandomColor());
+    graphics.fillPolygon(xValues1, yValues1, 6);
+
+
   }
   private static Color getRandomColor() {
     Random random = new Random();
@@ -110,8 +111,8 @@ public class Exercise13 {
 
     while (true) {
       imagePanel.repaint();
-      Thread.sleep(100);
-      ITERATOR += 1;
+      Thread.sleep(1000);
+      ITERATOR += 5;
     }
   }
 
