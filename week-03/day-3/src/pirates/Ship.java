@@ -12,10 +12,10 @@ public class Ship {
     int crewSize = r.nextInt(50) + 1;
     Pirate pirate = new Pirate("captain");
     pirate.isCapTain = true;
-    crew.add(pirate);
+    this.crew.add(pirate);
     for (int i = 1; i < crewSize; i++) {
       Pirate pirate1 = new Pirate(i);
-      crew.add(pirate1);
+      this.crew.add(pirate1);
     }
   }
 
