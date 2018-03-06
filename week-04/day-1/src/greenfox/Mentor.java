@@ -20,7 +20,7 @@ public class Mentor extends Person {
 
   public Mentor() {
     super();
-    this.level = "intermediate";
+    level = "intermediate";
   }
 
   public Mentor(String name, Integer age, String gender, String level) {
