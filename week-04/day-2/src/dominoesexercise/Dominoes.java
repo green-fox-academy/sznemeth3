@@ -7,10 +7,10 @@ import java.util.List;
 public class Dominoes {
   public static void main(String[] args) {
     List<Domino> dominoes = initializeDominoes();
-    List<Domino> tempList = new ArrayList<>();
+
     Collections.sort(dominoes);
     System.out.println(dominoes);
-    tempList.add(dominoes.get(0));
+    /*tempList.add(dominoes.get(0));
     int position;
     for (int j = 1; j < dominoes.size(); j++) {
       position = 0;
@@ -19,10 +19,11 @@ public class Dominoes {
       }
       tempList.add(position, dominoes.get(j));
     }
-    System.out.println(dominoes.get(0).getValues()[1]);
-
     System.out.println(tempList);
+    Collections.sort(dominoes);
+    System.out.println(dominoes);*/
   }
+
 
   static List<Domino> initializeDominoes() {
     List<Domino> dominoes = new ArrayList<>();

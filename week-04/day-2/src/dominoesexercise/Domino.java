@@ -17,9 +17,9 @@ public class Domino implements Comparable{
     if (this.getValues()[0] > d.getValues()[0]) {
       return 1;
     } else if (this.getValues()[0] < d.getValues()[0]) {
-      return 0;
+      return -1;
     } else {
-      return 1;
+      return 0;
     }
   }
 
