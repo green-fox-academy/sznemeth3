@@ -1,12 +1,15 @@
 package dominoesexercise;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Dominoes {
   public static void main(String[] args) {
     List<Domino> dominoes = initializeDominoes();
     List<Domino> tempList = new ArrayList<>();
+    Collections.sort(dominoes);
+    System.out.println(dominoes);
     tempList.add(dominoes.get(0));
     int position;
     for (int j = 1; j < dominoes.size(); j++) {
