@@ -7,11 +7,7 @@ public class Plant {
   private Double waterAmount;
 
   public boolean isThirsty() {
-    if (waterAmount < 15) {
-      return true;
-    } else {
-      return false;
-    }
+    return (waterAmount < 15);
   }
 
   public void watering(int wateringAmount) {
