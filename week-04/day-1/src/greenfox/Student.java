@@ -26,8 +26,7 @@ public class Student extends Person implements Cloneable {
     skippedDays = 0;
   }
 
-  public Student clone() {
-    Student clone = this;
-    return clone;
+  public Object clone() throws CloneNotSupportedException{
+    return super.clone();
   }
 }

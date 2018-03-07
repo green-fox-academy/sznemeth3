@@ -34,7 +34,14 @@ public class Cohort {
     people.add(john);
     Student student = new Student();
     people.add(student);
-    people.add(john.clone());
+    Student obj1 = new Student();
+    try {
+      Student obj2 = (Student)obj1.clone();
+      people.add(obj2);
+    }
+      catch (CloneNotSupportedException c) {
+        c.printStackTrace();;
+      }
     Mentor gandhi = new Mentor("Gandhi", 148, "male", "senior");
     people.add(gandhi);
     Mentor mentor = new Mentor();
