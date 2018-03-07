@@ -10,11 +10,7 @@ public class Tree extends Plant {
   }
 
   public boolean isThirsty() {
-    if (getWaterAmount() < THIRSTY_INDICATOR) {
-      return true;
-    } else {
-      return false;
-    }
+    return (getWaterAmount() < THIRSTY_INDICATOR);
   }
 
   public void watering(int wateringAmount) {
