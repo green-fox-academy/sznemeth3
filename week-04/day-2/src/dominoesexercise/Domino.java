@@ -1,7 +1,9 @@
 package dominoesexercise;
 
-public class Domino implements Comparable{
+
+public class Domino implements Comparable {
   private final int[] values;
+
 
   public Domino(int valueA, int valueB) {
     this.values = new int[]{valueA, valueB};
