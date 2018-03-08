@@ -9,11 +9,10 @@ public class FibonacciTest {
 
   @Test
   public void fibo1() {
-    assertEquals(fibonacci.fibo(input1),8);
+    assertEquals(fibonacci.fibo(input1),21);
   }
   @Test
   public void fibo2() {
     assertEquals(fibonacci.fibo(input2),0);
   }
-
 }
