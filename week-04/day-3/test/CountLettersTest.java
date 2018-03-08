@@ -7,8 +7,14 @@ public class CountLettersTest {
   String word = "loller";
 
   @Test
-  public void convertToDictionary() {
+  public void testWithNotExistingLetter() {
 
     assertEquals(test.convertToDictionary(word).get('a'), null);
+  }
+
+  @Test
+  public void testWithExistingLetter() {
+
+    assertEquals(test.convertToDictionary(word).get('l'), 3);
   }
 }
