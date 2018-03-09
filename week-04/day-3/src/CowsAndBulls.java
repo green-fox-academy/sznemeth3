@@ -25,7 +25,7 @@ public class CowsAndBulls {
     System.out.println(randomNumber);
 
   }
-  public String guessTheNumber(String userInput) {
+  public String guessTheNumberG(String userInput) {
     String result = "";
     for (int i = 0; i < userInput.length(); i++) {
       if (userInput.charAt(i) == randomNumber.charAt(i)) {
@@ -45,9 +45,9 @@ public class CowsAndBulls {
     return result;
   }
 
-  public String guessTheNumberfirst(String userInput) {
+  public String guessTheNumber(String userInput) {
     String result = "";
-    String notCowsRandom = "";
+    String notCowsRandom = randomNumber;
     String notCowsGuess = "";
     for (int i = 0; i < userInput.length(); i++) {
       if (userInput.charAt(i) != randomNumber.charAt(i)) {
