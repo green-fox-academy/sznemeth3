@@ -6,7 +6,6 @@ public class MultiplicationTable {
         for (int i = 1; i < 11; i++) {
             System.out.println(i + " * " + userInput + " = " + (userInput * i));
         }
-        
     }
     public static void main(String[] args) {
         System.out.println("Please write a number to multiply");
