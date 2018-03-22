@@ -28,12 +28,14 @@ public class Crashes {
                 }
             }
             catch (ArrayIndexOutOfBoundsException a) {
-                
+
             }
             System.out.println("Good: " + goodWeatherCrashes + " Bad: " + badWeatherCrashes);
+            System.out.println(lines.size());
         }
         catch (IOException e) {
             System.out.println("error in reading file");
+
         }
 
     }
