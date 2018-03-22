@@ -1,6 +1,6 @@
 [Syllabus](https://github.com/greenfox-academy/becool-syllabus "Github syllabus a becool csapatnak")
 
-[Wanderer](://github.com/sznemeth3/wanderer-java "Wanderer")
+[Wanderer](https://github.com/sznemeth3/wanderer-java "Wanderer")
 [git-lesson-repository](https://github.com/sznemeth3/git-lesson-repository "git lessons")
 [hello-world](https://github.com/sznemeth3/hello-world "hello word!")
 [patchwork](https://github.com/sznemeth3/patchwork "patchwork files")
