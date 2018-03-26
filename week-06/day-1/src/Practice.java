@@ -87,7 +87,7 @@ public class Practice {
     System.out.println(mapNumbers);
 
     System.out.println(numbers8.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
-    Stream.of(numbers8.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))).forEach(System.out::println);
+      Stream.of(numbers8.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))).forEach(System.out::println);
 
     HashMap<Integer, Integer> mapNumbers2 = new HashMap<Integer, Integer>();
     for (Integer c : numbers8) {
@@ -96,7 +96,7 @@ public class Practice {
     System.out.println(mapNumbers2);
     //Exercise 9*******************************************************************************************************
     Character[] list = new Character[]{'K', 'u', 't', 'y', 'a'};
-    String newWord = Arrays.stream(list).map(x -> String.valueOf(x)).collect(Collectors.joining(""));
+    String newWord = Arrays.stream(list).map(String::valueOf).collect(Collectors.joining());
     System.out.println(newWord);
 
     for (int i = 0; i < list.length; i++) {
