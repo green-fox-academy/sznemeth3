@@ -1,10 +1,12 @@
 package com.greenfoxacademy.springstart.controllers;
 
-public class Greating {
+import java.util.concurrent.atomic.AtomicLong;
+
+public class Greeting {
   private Long Id;
   private String Content;
 
-  public long getId() {
+  public Long getId() {
     return Id;
   }
 
@@ -12,7 +14,7 @@ public class Greating {
     return Content;
   }
 
-  public Greating(long id, String content) {
+  public Greeting(Long id, String content) {
     Id = id;
     Content = content;
   }
