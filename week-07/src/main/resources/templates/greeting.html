@@ -4,7 +4,9 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-<body>
-<p th:text="'Hello, ' + ${name} + '!'"/>
+<th:block th:each ="i : ${hello}">
+<p1  th:style= "'font-size:'+ ${fontSize} +'px; color: rgb(' + ${r} +',' +${g}+',' +${b}+');'" th:utext= "'' + ${i} +' ' + ${name} + '! <br />'"/>
+</th:block>
+<p2 th:text="'This site was loaded ' + ${id} + ' times since last server start'"/>
 </body>
 </html>
