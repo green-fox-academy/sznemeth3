@@ -19,25 +19,62 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+        .Mufasa {
+            background: linear-gradient(to bottom, #fefcea 0%, #f1da36 100%)
+        }
+
+        .Zordon {
+            background: linear-gradient(to bottom, rgba(69, 72, 77, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            color: ivory
+        }
+        .Rest {
+            background: linear-gradient(to bottom, rgba(250, 198, 149, 1) 0%, rgba(245, 171, 102, 1) 47%, rgba(239, 141, 49, 1) 100%);
+        }
+
     </style>
 </head>
 <body>
 
-    <table>
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Type</th>
+        <th>Position</th>
+        <th>Personality</th>
+    </tr>
+    <th:block th:each="account : ${accountList}">
         <tr>
-            <th>Index</th>
-            <th>Name</th>
-            <th>Balance</th>
-            <th>Type</th>
+            <div th:switch="${account.name}">
+                <div th:case="Mufasa">
+                    <td class="Mufasa" th:text="${accountList.indexOf(account) +1}">index'</td>
+                    <td class="Mufasa" th:text="${account.name}">Name'</td>
+                    <td class="Mufasa" th:text="${account.balance}">Balance'</td>
+                    <td class="Mufasa" th:text="${account.animalType}">Type'</td>
+                    <td class="Mufasa">King</td>
+                    <td class="Mufasa">Good guy</td>
+                </div>
+                <div th:case="Zordon">
+                    <td class="Zordon" th:text="${accountList.indexOf(account) +1}">index'</td>
+                    <td class="Zordon" th:text="${account.name}">Name'</td>
+                    <td class="Zordon" th:text="${account.balance}">Balance'</td>
+                    <td class="Zordon" th:text="${account.animalType}">Type'</td>
+                    <td class="Zordon">Almost king</td>
+                    <td class="Zordon">Bad guy</td>
+                </div>
+                <div th:case="*">
+                    <td class="Rest" th:text="${accountList.indexOf(account) +1}">index'</td>
+                    <td class="Rest" th:text="${account.name}">Name'</td>
+                    <td class="Rest" th:text="${account.balance}">Balance'</td>
+                    <td class="Rest" th:text="${account.animalType}">Type'</td>
+                    <td class="Rest">Slave</td>
+                    <td class="Rest">Good guy</td>
+                </div>
+            </div>
         </tr>
-        <th:block th:each="account : ${accountList}">
-            <tr>
-                <td th:text="${accountList.indexOf(account) +1}">index'</td>
-                <td th:text="${account.name}">Name'</td>
-                <td th:text="${account.balance}">Balance'</td>
-                <td th:text="${account.animalType}">Type'</td>
-            </tr>
-        </th:block>
-    </table>
+    </th:block>
+</table>
 </body>
 </html>
