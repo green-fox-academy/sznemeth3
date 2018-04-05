@@ -13,6 +13,6 @@ public class RedColor implements MyColor {
 
   @Override
   public void printColor() {
-    printer.log("It is green in color...");
+    printer.colorPrint("RED");
   }
 }

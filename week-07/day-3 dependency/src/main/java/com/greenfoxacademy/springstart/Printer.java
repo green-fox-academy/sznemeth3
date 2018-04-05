@@ -9,4 +9,9 @@ public class Printer {
   public void log(String message) {
     System.out.println(LocalDateTime.now() + " MY PRINTER SAYS --- " + message);
   }
+
+  public void colorPrint(String message) {
+    System.out.println(LocalDateTime.now() + " MY COLOR IS --- " + message);
+  }
+
 }
