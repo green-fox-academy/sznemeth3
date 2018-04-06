@@ -21,7 +21,7 @@ public class BankAccount {
 
   public String getAnimalType() {
     return animalType;
-    }
+  }
 
   public void setName(String name) {
     this.name = name;

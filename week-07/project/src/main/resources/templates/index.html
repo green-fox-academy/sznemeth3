@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a href="http://localhost:8080/login" class="button">Information</a><br>
+<img th:src="@{greenfox.png}" alt="Fox" />
+<p th:text="'This is ' + ${name} + '    Currently living on pizza and lemonade. He knows 2 tricks.' "><p/>
+<h1>Known tricks</h1>
+<ul>
+    <li>Write HTM</li>
+    <li>Code in Java</li>
+</ul>
+</body>
+</html>

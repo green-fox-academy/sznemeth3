@@ -20,7 +20,7 @@
             background-color: #dddddd;
         }
 
-        .Mufasa  {
+        .Mufasa {
             background: linear-gradient(to bottom, #fefcea 0%, #f1da36 100%)
         }
 
@@ -36,28 +36,7 @@
     </style>
 </head>
 <body>
-
-<form action="#" th:action="@{/processForm}" th:object="${BankAccount}" method="POST">
-    <table border="1">
-        <tr>
-
-            <td><input type="text" th:field="*{name}"></td>
-        </tr>
-        <tr>
-
-            <td><input type="text" th:field="*{balance}"></td>
-        </tr>
-        <tr>
-
-            <td><input type="text" th:field="*{animalType}"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Submit" /></td>
-        </tr>
-    </table>
-
-</form>
-
+<a href="/add_account" class="button">Add</a>
 <table>
     <tr>
         <th>Index</th>
@@ -95,7 +74,6 @@
             </div>
         </tr>
     </th:block>
-
 
 
 </table>

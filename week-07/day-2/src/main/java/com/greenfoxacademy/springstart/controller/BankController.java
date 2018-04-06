@@ -1,6 +1,8 @@
 package com.greenfoxacademy.springstart.controller;
 
 import com.greenfoxacademy.springstart.model.BankAccount;
+import com.greenfoxacademy.springstart.model.ServiceMethod;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,21 +16,19 @@ import java.util.List;
 
 @Controller
 public class BankController {
-  List<BankAccount> accountList = new ArrayList<>();
+  private static List<BankAccount> accountList;
 
-  @RequestMapping("/show")
+  @Autowired
+  ServiceMethod serviceMethod;
+
+  @RequestMapping("/fill")
   public String show(Model model) {
-    BankAccount account = new BankAccount("Simba", 2000.,"lion");
-    DecimalFormat format = new DecimalFormat("#.00");
-    model.addAttribute("name", account.getName());
-    model.addAttribute("balance", format.format(account.getBalance()));
-    model.addAttribute("animalType", account.getAnimalType());
-    return "show";
-
+    accountList = serviceMethod.fillList(accountList);
+    return "redirect:/list";
   }
 
   @RequestMapping("/string")
-  public String writeString (Model model) {
+  public String writeString(Model model) {
     String content = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
     model.addAttribute("content", content);
 
@@ -36,30 +36,29 @@ public class BankController {
   }
 
   @RequestMapping("/add")
-  public String addAccount (Model model) {
+  public String addAccount(Model model) {
     String content = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
     model.addAttribute("content", content);
 
     return "string";
   }
 
-  @RequestMapping("/list")
-  public String writeList (Model model) {
-
-    accountList.add(new BankAccount("Pumba", 1000., "Pig"));
-    accountList.add(new BankAccount("Timon", 9000., "Rat"));
-    accountList.add(new BankAccount("Mufasa", 101100., "Lion"));
-    accountList.add(new BankAccount("Zordon", 1., "Lion"));
+  @RequestMapping(value = "/list")
+  public String writeList(Model model) {
     model.addAttribute("accountList", accountList);
-
     return "list";
   }
 
-  @RequestMapping(value = "/processForm", method= RequestMethod.POST)
-  public String processForm(@ModelAttribute(value="BankAccount") BankAccount bankAccount, Model model) {
+  @RequestMapping(value = "/process")
+  public String processForm(@ModelAttribute(value = "BankAccount") BankAccount bankAccount, Model model) {
     accountList.add(bankAccount);
-   model.addAttribute("accountList", accountList);
-    return "list";
+    model.addAttribute("accountList", accountList);
+    return "redirect:/list";
+  }
+
+  @RequestMapping(value = "/add_account", method = RequestMethod.GET)
+  public String addAccount(@ModelAttribute(value = "BankAccount") BankAccount bankAccount, Model model) {
+    return "add_account";
   }
 
 }
