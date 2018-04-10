@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("todo")
@@ -33,10 +30,15 @@ public class TodoController {
     todoRepo.save(new Todo(title));
     return "redirect:/todo/";
   }
+
   @RequestMapping(value = "/add_todo")
   public String addTodo() {
     return "add_todo";
   }
 
-
+  @RequestMapping(value = "/{id}/delete")
+  public String deleteTodo(@PathVariable Long id) {
+    todoRepo.deleteById(id);
+    return "redirect:/todo/";
+  }
 }

@@ -40,7 +40,7 @@
             <td th:text="${todo.title}"></td>
             <td th:text="${todo.done}"></td>
             <td th:text="${todo.urgent}"></td>
-            <td><a th:href="/todo/add_todo" class="button">delete</a></td>
+            <td><a th:href="'/todo/' + ${todo.id} + '/delete'" class="button">delete</a></td>
         </tr>
     </th:block>
 </table>
