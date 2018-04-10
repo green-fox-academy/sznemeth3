@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        input {
+            size: 10px;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/todo/process}"  method="POST">
+    Todo: <br>
+    <input type="text" name="title"><br>
+    <input type="submit" value="Add"/><br>
+</form>
+</body>
