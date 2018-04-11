@@ -30,6 +30,18 @@ public class Todo {
     this.done = done;
   }
 
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setUrgent(boolean urgent) {
+    this.urgent = urgent;
+  }
+
+  public void setDone(boolean done) {
+    this.done = done;
+  }
+
   public Long getId() {
     return id;
   }

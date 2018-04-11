@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        input {
+            size: 10px;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>Edit Todo</h1>
+<form action="#" th:action="@{'/todo/edit/'+ ${todo.id} + ''}"  method="POST">
+    Todo Description:
+    <input type="text" name="title" th:placeholder="${todo.title}"><br>
+    Urgent:<br>
+    <input type="checkbox" th:checked="${todo.urgent}" name="urgent"><br>
+    Done:<br>
+    <input type="checkbox" th:checked="${todo.done}" name="done"><br>
+    <input type="submit" value="Add"/><a href="/todo/" class="button">Cancel</a>
+</form>
+</body>

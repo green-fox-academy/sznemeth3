@@ -41,6 +41,7 @@
             <td th:text="${todo.done}"></td>
             <td th:text="${todo.urgent}"></td>
             <td><a th:href="'/todo/' + ${todo.id} + '/delete'" class="button">delete</a></td>
+            <td><a th:href="'/todo/' + ${todo.id} + '/edit'" class="edit">edit</a></td>
         </tr>
     </th:block>
 </table>
