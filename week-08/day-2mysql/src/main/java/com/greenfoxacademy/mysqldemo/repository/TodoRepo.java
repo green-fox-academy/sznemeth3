@@ -4,7 +4,7 @@ import com.greenfoxacademy.mysqldemo.model.Todo;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
+
 
 public interface TodoRepo extends CrudRepository<Todo, Long> {
 
