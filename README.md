@@ -1,4 +1,4 @@
-#Projects
+# Projects
 
 [Syllabus](https://github.com/greenfox-academy/becool-syllabus "Github syllabus a becool csapatnak")
 
@@ -14,6 +14,6 @@
 
 [HEROKU](https://github.com/sznemeth3/todo-app "HEROKU Todo")
 
-#Practice
+# Practice
 
 [SPACE](https://github.com/sznemeth3/corsac-orientation-exam "Space exploration Exam practice")
